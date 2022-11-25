@@ -6,8 +6,240 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"
+          rel="stylesheet">
+    <style>
+        .specific-group-container {
+            max-width: 1400px;
+            width: 100%;
+            font-family: 'Source Sans Pro', sans-serif;
+            margin: 0 auto;
+        }
+
+        .career-why-block {
+            display: flex;
+            padding-top: 80px;
+        }
+
+        .career-why-block__item:first-child {
+            width: 47%;
+        }
+
+        .career-why-block__item:last-child {
+            padding-left: 118px;
+            width: 53%;
+        }
+
+        .career-title3 {
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 56px;
+            color: #353535;
+            padding-bottom: 16px;
+            margin: 0;
+        }
+
+        .career-title__desc {
+            font-weight: 600;
+            font-size: 32px;
+            line-height: 40px;
+            color: #265A92;
+        }
+
+        .career-block__item {
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 24px;
+            color: #707070;
+            position: relative;
+            padding-left: 24px;
+            padding-bottom: 16px;
+        }
+
+        .career-why-block__item img {
+            width: 100%;
+        }
+
+        .career-block__item:after {
+            position: absolute;
+            content: "";
+            width: 8px;
+            height: 8px;
+            left: 8px;
+            top: 8px;
+            border-radius: 50%;
+            background-color: #265A92;
+        }
+
+        .who-block {
+            display: flex;
+            padding-top: 100px;
+        }
+        .who-block-full-wrap{
+            position: relative;
+        }
+        .who-block-full-wrap:after{
+            content: "";
+            position: absolute;
+            bottom:0;
+            left: 0;
+            right: 0;
+            top:auto;
+            background: linear-gradient(180deg, rgba(217, 217, 217, 0) 0%, #D9D9D9 100%);
+            opacity: 0.5;
+            z-index: 10;
+            width: 100%;
+            height: 150px;
+        }
+
+        .who-block__item:first-child {
+            width: 65%;
+        }
+
+        .who-block__item:last-child {
+            width: 35%;
+            display: flex;
+        }
+
+        .who-block__desc {
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 40px;
+            color: #353535;
+        }
+
+        .who-block__desc__blue {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 40px;
+            color: #265A92;
+            padding-bottom: 40px;
+        }
+
+        .who-block__list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .who-block__list-item {
+            display: flex;
+            width: 50%;
+        }
+
+        .who-block__list-item-icon {
+            width: 40px;
+        }
+
+        .who-block__list-item-text {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        .who-block__list-item-title {
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 40px;
+            color: #353535;
+        }
+
+        .who-block__list-item {
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 40px;
+            color: #265A92;
+            padding-bottom: 24px;
+        }
+    </style>
 </head>
 <body>
+
+
+<section>
+    <div class="specific-group-container">
+        <div class="career-why-block">
+            <div class="career-why-block__item">
+                <img src="images/why-career.png" alt=""/>
+            </div>
+            <div class="career-why-block__item">
+                <h3 class="career-title3">Why Join Specific-Group?</h3>
+                <p class="career-title__desc">BENEFITS</p>
+                <div class="career-block__list">
+                    <div class="career-block__item">Competitive salary</div>
+                    <div class="career-block__item">Flexible work-life balance</div>
+                    <div class="career-block__item">Paid time off</div>
+                    <div class="career-block__item">Health coverage</div>
+                    <div class="career-block__item">Ongoing training programs</div>
+                    <div class="career-block__item">Relocation options</div>
+                    <div class="career-block__item">Recognition opportunities for open source contributions</div>
+                    <div class="career-block__item">We encourage collaboration and value diversity</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="who-block-full-wrap">
+    <div class="specific-group-container">
+        <div class="who-block">
+            <div class="who-block__item">
+                <h3 class="career-title3">Wer sind wir eigentlich und wie viele?</h3>
+                <p class="who-block__desc">Entwicklungsstandorte</p>
+                <p class="who-block__desc__blue">Litauen, Polen, Ungarn, Belarus, Slowakei</p>
+                <div class="who-block__list">
+                    <div class="who-block__list-item">
+                        <div class="who-block__list-item-icon">
+                            <img src="images/who1.svg" alt=""/>
+                        </div>
+                        <div class="who-block__list-item-text">
+                            <div class="who-block__list-item-title">225 Developer</div>
+                            <div class="who-block__list-item-desc">170 Backend / 55 Frontend</div>
+                        </div>
+                    </div>
+                    <div class="who-block__list-item">
+                        <div class="who-block__list-item-icon">
+                            <img src="images/who2.svg" alt=""/>
+                        </div>
+                        <div class="who-block__list-item-text">
+                            <div class="who-block__list-item-title">50 Business Analysten</div>
+                            <div class="who-block__list-item-desc">alle mit technischer Ausbildung</div>
+                        </div>
+                    </div>
+                    <div class="who-block__list-item">
+                        <div class="who-block__list-item-icon">
+                            <img src="images/who3.svg" alt=""/>
+                        </div>
+                        <div class="who-block__list-item-text">
+                            <div class="who-block__list-item-title">30 DevOps</div>
+                            <div class="who-block__list-item-desc">35 Tester</div>
+                        </div>
+                    </div>
+                    <div class="who-block__list-item">
+                        <div class="who-block__list-item-icon">
+                            <img src="images/who4.svg" alt=""/>
+                        </div>
+                        <div class="who-block__list-item-text">
+                            <div class="who-block__list-item-title">40 Project Manager</div>
+                        </div>
+                    </div>
+                    <div class="who-block__list-item">
+                        <div class="who-block__list-item-icon">
+                            <img src="images/who5.svg" alt=""/>
+                        </div>
+                        <div class="who-block__list-item-text">
+                            <div class="who-block__list-item-title">20 Scrum Master</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="who-block__item">
+                <img src="images/who-img.png" alt=""/>
+            </div>
+
+        </div>
+    </div>
+</section>
 
 </body>
 </html>
