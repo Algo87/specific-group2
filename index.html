@@ -259,7 +259,7 @@
             content: "";
             width: 8px;
             height: 8px;
-            top: 8px;
+            top: 16px;
             left: 8px;
             border-radius: 50%;
             background-color: #353535;
@@ -297,6 +297,72 @@
             font-size: 20px;
             line-height: 40px;
             color: #707070;
+        }
+
+        .faq-block__answer__mobile {
+            padding:0;
+            margin:auto;
+            visibility: hidden;
+            height:0;
+            overflow:hidden;
+            opacity:0;
+            transition:all 0.2s linear;
+        }
+
+        @media screen and  (max-width: 1400px) {
+            .faq-block {
+                flex-wrap: wrap;
+            }
+
+            .faq-block-item {
+                width: 100%;
+                flex-wrap: wrap;
+                padding-left: 50px;
+                padding-right: 50px;
+            }
+            .faq-block__answer__mobile.active{
+                padding-top:10px;
+                padding-bottom:10px;
+                visibility: visible;
+                height:auto;
+                overflow: auto;
+                opacity:1;
+            }
+            .faq-block-item:last-child{
+                display: none;
+            }
+            .faq-block-list{
+                width: 100%;
+            }
+            .faq-block-list__item{
+                padding-right: 48px;
+            }
+            .faq-block-list__item:after{
+                position: absolute;
+                content:"";
+                width: 48px;
+                height: 48px;
+                background-image:url("images/arrow.svg");
+                transform:rotate(180deg);
+                background-position: center;
+                background-repeat: no-repeat;
+                right: 0;
+                top:0;
+                transition: all 0.6s;
+            }
+            .faq-block-list__item.active:after{
+                transform:rotate(0deg);
+                transition: all 0.6s;
+            }
+        }
+        @media screen and (max-width: 1024px){
+            .faq-block-item{
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            .faq-block-list-img{
+                margin: 0 auto;
+            }
         }
     </style>
 </head>
@@ -396,11 +462,45 @@
                     <div class="faq-block-list__item active" data-faq-id="1">Was unterscheidet uns von anderen
                         IT-Dienstleistern?
                     </div>
+                    <div class="faq-block__answer__mobile active" data-faq-answer="1">
+                        <h4 class="faq-block-title2">Was unterscheidet uns von anderen IT-Dienstleistern?</h4>
+                        <div class="faq-block-answer__desc">
+                            Klarer Technischer Fokus: Wir sind keine PowerPoint-Wizards. Du bist nicht in einem
+                            Karrierepfad
+                            gefangen sondern kannst dich Schritt für Schritt entscheiden wie es weiter gehen soll Wir
+                            vereinbaren pro Projekt wann, wo und wieviel du arbeitest Deine individuelle
+                            Weiterentwicklung
+                            bestimmt nicht eine Konzernrichtlinie, sondern du selbst
+                        </div>
+                    </div>
                     <div class="faq-block-list__item" data-faq-id="2">Wie konnten wir in den letzten 24 Monaten über 90
                         Seniors hiren?
                     </div>
+                    <div class="faq-block__answer__mobile" data-faq-answer="2">
+                        <h4 class="faq-block-title2">Wie konnten wir in den letzten 24 Monaten über 90 Seniors
+                            hiren?</h4>
+                        <div class="faq-block-answer__desc">
+                            Klarer Technischer Fokus: Wir sind keine PowerPoint-Wizards. Du bist nicht in einem
+                            Karrierepfad
+                            gefangen sondern kannst dich Schritt für Schritt entscheiden wie es weiter gehen soll Wir
+                            vereinbaren pro Projekt wann, wo und wieviel du arbeitest Deine individuelle
+                            Weiterentwicklung
+                            bestimmt nicht eine Konzernrichtlinie, sondern du selbst
+                        </div>
+                    </div>
                     <div class="faq-block-list__item" data-faq-id="3">4 Dinge, woran du erkennst, dass wir kein Match
                         haben
+                    </div>
+                    <div class="faq-block__answer__mobile" data-faq-answer="3">
+                        <h4 class="faq-block-title2">4 Dinge, woran du erkennst, dass wir kein Match haben</h4>
+                        <div class="faq-block-answer__desc">
+                            Klarer Technischer Fokus: Wir sind keine PowerPoint-Wizards. Du bist nicht in einem
+                            Karrierepfad
+                            gefangen sondern kannst dich Schritt für Schritt entscheiden wie es weiter gehen soll Wir
+                            vereinbaren pro Projekt wann, wo und wieviel du arbeitest Deine individuelle
+                            Weiterentwicklung
+                            bestimmt nicht eine Konzernrichtlinie, sondern du selbst
+                        </div>
                     </div>
 
                 </div>
@@ -447,17 +547,35 @@
   function showFAQAnswer() {
     let titles = document.querySelectorAll("[data-faq-id]");
     let answers = document.querySelectorAll("[data-faq-answer]");
+    let curWidth = window.innerWidth;
 
     titles.forEach(item => {
 
       item.addEventListener("click", function () {
-        titles.forEach(item => item.classList.remove("active"))
         let faqId = this.dataset.faqId;
-        this.classList.add("active");
 
-        answers.forEach(answer => {
-          answer.dataset.faqAnswer === faqId ? answer.classList.add('active') : answer.classList.remove('active');
-        })
+        if(curWidth > 1400){
+          titles.forEach(item => item.classList.remove("active"))
+          this.classList.add("active");
+
+          answers.forEach(answer => {
+            answer.dataset.faqAnswer === faqId ? answer.classList.add('active') : answer.classList.remove('active');
+          })
+        }else{
+          if(this.classList.contains("active")){
+            this.classList.remove("active");
+            titles.forEach(item => item.classList.remove("active"))
+            answers.forEach(answer => {
+              answer.dataset.faqAnswer === faqId && answer.classList.remove('active');
+            })
+          }else{
+            titles.forEach(item => item.classList.remove("active"))
+            this.classList.add("active");
+            answers.forEach(answer => {
+              answer.dataset.faqAnswer === faqId ? answer.classList.add('active') : answer.classList.remove('active');
+            })
+          }
+        }
       })
     })
   }
