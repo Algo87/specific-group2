@@ -222,6 +222,82 @@
                 justify-content: center;
             }
         }
+
+        .faq-block {
+            display: flex;
+        }
+
+        .faq-block-item {
+            width: 50%;
+        }
+
+        .faq-block-item {
+            display: flex;
+            padding-top: 80px;
+        }
+
+        .faq-block-title1 {
+            font-weight: 400;
+            font-size: 32px;
+            line-height: 56px;
+            color: #353535;
+            padding-bottom: 24px;
+            margin: 0;
+        }
+
+        .faq-block-list__item {
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 40px;
+            color: #353535;
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .faq-block-list__item:before {
+            position: absolute;
+            content: "";
+            width: 8px;
+            height: 8px;
+            top: 8px;
+            left: 8px;
+            border-radius: 50%;
+            background-color: #353535;
+
+        }
+
+        .faq-block-list__item.active {
+            color: #FF7A00;
+        }
+
+        .faq-block-list__item.active:before {
+            background-color: #FF7A00;
+        }
+
+        .faq-block__answer {
+            display: none;
+        }
+
+        .faq-block__answer.active {
+            display: block;
+            padding-left: 16px;
+        }
+
+        .faq-block-title2 {
+            font-weight: 400;
+            font-size: 36px;
+            line-height: 56px;
+            color: #353535;
+            margin: 0;
+            padding-bottom: 24px;
+        }
+
+        .faq-block-answer__desc {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 40px;
+            color: #707070;
+        }
     </style>
 </head>
 <body>
@@ -311,6 +387,83 @@
         </div>
     </div>
 </section>
+<section>
+    <div class="specific-group-container">
+        <div class="faq-block">
+            <div class="faq-block-item">
+                <div class="faq-block-list">
+                    <h4 class="faq-block-title1">Häufig gestellte Fragen</h4>
+                    <div class="faq-block-list__item active" data-faq-id="1">Was unterscheidet uns von anderen
+                        IT-Dienstleistern?
+                    </div>
+                    <div class="faq-block-list__item" data-faq-id="2">Wie konnten wir in den letzten 24 Monaten über 90
+                        Seniors hiren?
+                    </div>
+                    <div class="faq-block-list__item" data-faq-id="3">4 Dinge, woran du erkennst, dass wir kein Match
+                        haben
+                    </div>
+
+                </div>
+                <div class="faq-block-list-img">
+                    <img src="images/faq-img.png" alt=""/>
+                </div>
+            </div>
+            <div class="faq-block-item">
+                <div class="faq-block__answer active" data-faq-answer="1">
+                    <h4 class="faq-block-title2">Was unterscheidet uns von anderen IT-Dienstleistern?</h4>
+                    <div class="faq-block-answer__desc">
+                        Klarer Technischer Fokus: Wir sind keine PowerPoint-Wizards. Du bist nicht in einem Karrierepfad
+                        gefangen sondern kannst dich Schritt für Schritt entscheiden wie es weiter gehen soll Wir
+                        vereinbaren pro Projekt wann, wo und wieviel du arbeitest Deine individuelle Weiterentwicklung
+                        bestimmt nicht eine Konzernrichtlinie, sondern du selbst
+                    </div>
+                </div>
+                <div class="faq-block__answer" data-faq-answer="2">
+                    <h4 class="faq-block-title2">Wie konnten wir in den letzten 24 Monaten über 90 Seniors hiren?</h4>
+                    <div class="faq-block-answer__desc">
+                        Klarer Technischer Fokus: Wir sind keine PowerPoint-Wizards. Du bist nicht in einem Karrierepfad
+                        gefangen sondern kannst dich Schritt für Schritt entscheiden wie es weiter gehen soll Wir
+                        vereinbaren pro Projekt wann, wo und wieviel du arbeitest Deine individuelle Weiterentwicklung
+                        bestimmt nicht eine Konzernrichtlinie, sondern du selbst
+                    </div>
+                </div>
+                <div class="faq-block__answer" data-faq-answer="3">
+                    <h4 class="faq-block-title2">4 Dinge, woran du erkennst, dass wir kein Match haben</h4>
+                    <div class="faq-block-answer__desc">
+                        Klarer Technischer Fokus: Wir sind keine PowerPoint-Wizards. Du bist nicht in einem Karrierepfad
+                        gefangen sondern kannst dich Schritt für Schritt entscheiden wie es weiter gehen soll Wir
+                        vereinbaren pro Projekt wann, wo und wieviel du arbeitest Deine individuelle Weiterentwicklung
+                        bestimmt nicht eine Konzernrichtlinie, sondern du selbst
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+  function showFAQAnswer() {
+    let titles = document.querySelectorAll("[data-faq-id]");
+    let answers = document.querySelectorAll("[data-faq-answer]");
+
+    titles.forEach(item => {
+
+      item.addEventListener("click", function () {
+        titles.forEach(item => item.classList.remove("active"))
+        let faqId = this.dataset.faqId;
+        this.classList.add("active");
+
+        answers.forEach(answer => {
+          answer.dataset.faqAnswer === faqId ? answer.classList.add('active') : answer.classList.remove('active');
+        })
+      })
+    })
+  }
+
+  showFAQAnswer();
+</script>
 
 </body>
 </html>
