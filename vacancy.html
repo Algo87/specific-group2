@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"
+          rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .specific-group-vacancy {
+            max-width: 1200px;
+            width: 100%;
+            font-family: 'Source Sans Pro', sans-serif;
+            margin: 0 auto;
+            padding-left: 17px;
+            padding-right: 17px;
+            box-sizing: border-box;
+        }
+
+        .specific-group-vacancy-block {
+            display: flex;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #909A9E;
+            padding-top: 40px;
+        }
+
+        .specific-group-vacancy-block-item {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .specific-group-vacancy-block-item:first-child,
+        .specific-group-vacancy-block-item:last-child {
+            width: 200px;
+            min-width: 200px;
+        }
+
+        .specific-group-vacancy-block-item:first-child {
+            padding-right: 20px;
+        }
+
+        .specific-group-vacancy-title {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 24px;
+            color: #000000;
+            margin: 0;
+        }
+
+        .specific-group-vacancy-bottoms {
+            display: flex;
+            align-items: center;
+            margin-top: 28px;
+        }
+
+
+        .specific-group-vacancy-badge {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 32px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            padding: 0 12px;
+            background: #FF7A00;
+            border-radius: 4px;
+            border: none;
+        }
+
+        .specific-group-vacancy-home,
+        .specific-group-vacancy-send {
+            border: none;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: transparent;
+            width: 24px;
+            height: 24px;
+        }
+
+        .specific-group-vacancy-send {
+            background-image: url("/images-vacancy/send.svg");
+            margin-right: 16px;
+            margin-left: 16px;
+        }
+
+        .specific-group-vacancy-home {
+            background-image: url("/images-vacancy/home.svg");
+        }
+
+        .specific-group-vacancy-desc2,
+        .specific-group-vacancy-desc1 {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 32px;
+            color: #707070;
+            padding-bottom: 4px;
+        }
+
+        .specific-group-vacancy-desc2 {
+            font-weight: 600;
+        }
+
+        .specific-group-vacancy-des3-wrap {
+            width: 100%;
+            padding: 0 0 24px 0;
+        }
+
+        .specific-group-vacancy-desc3 {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            height: 6.9em;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 32px;
+            color: #000000;
+
+        }
+
+        .specific-group-vacancy-text__blue {
+            color: #265A92;
+        }
+
+        .specific-group-vacancy-btn__blue {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 24px;
+            color: #FFFFFF;
+            background: #265A92;
+            border: 2px solid #265A92;
+            padding: 16px 24px 16px 12px;
+        }
+
+        .specific-group-vacancy-block-item:last-child {
+            text-align: right;
+        }
+
+        .specific-group-vacancy-block-item
+        .specific-group-vacancy-btn__blue {
+            margin-top: 16px;
+        }
+
+        @media screen and (max-width: 1023px) {
+            .specific-group-vacancy-block {
+                flex-wrap: wrap;
+            }
+
+            .specific-group-vacancy-block-item {
+                width: 100%;
+                min-width: 100%;
+            }
+
+            .specific-group-vacancy-block-item:first-child,
+            .specific-group-vacancy-block-item:last-child {
+                width: 100%;
+                min-width: 100%;
+            }
+            .specific-group-vacancy-bottoms{
+                padding-bottom: 16px;
+            }
+            .specific-group-vacancy-block-item:last-child{
+                text-align: left;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+<section>
+    <div class="specific-group-vacancy">
+
+        <div class="specific-group-vacancy-block">
+            <div class="specific-group-vacancy-block-item">
+                <h4 class="specific-group-vacancy-title">Java Engineer
+                    (Freelancer/Employee)</h4>
+                <div class="specific-group-vacancy-desc1">Remote</div>
+                <div class="specific-group-vacancy-desc2">Wien, Österreich</div>
+                <div class="specific-group-vacancy-bottoms">
+                    <button class="specific-group-vacancy-badge">heiß</button>
+                    <button class="specific-group-vacancy-send"></button>
+                    <button class="specific-group-vacancy-home"></button>
+                </div>
+
+            </div>
+            <div class="specific-group-vacancy-block-item">
+                <div class="specific-group-vacancy-des3-wrap">
+                    <div class="specific-group-vacancy-desc3">Specific-Group is a leading global provider of digital
+                        platform engineering and development services. We are committed to having a positive impact on
+                        our
+                        customers, our employees, and our communities. We embrace a dynamic and inclusive culture. Here
+                        you
+                        will collaborate with multi-national teams, contribute to a myriad of innovative projects
+                    </div>
+                </div>
+                <div class="specific-group-vacancy-desc1">
+                    Common techstack:
+                    <span class="specific-group-vacancy-text__blue">Java, Spring, Hibernate, Typescript, Angular, Docker, Kubernetes, REST</span>
+                </div>
+            </div>
+            <div class="specific-group-vacancy-block-item">
+                <div class="specific-group-vacancy-desc1">Ansehen und Anwenden</div>
+                <button class="specific-group-vacancy-btn__blue">
+                    Mehr Sehen
+                </button>
+
+            </div>
+        </div>
+        <div class="specific-group-vacancy-block">
+            <div class="specific-group-vacancy-block-item">
+                <h4 class="specific-group-vacancy-title">Java Engineer
+                    (Freelancer/Employee)</h4>
+                <div class="specific-group-vacancy-desc1">Remote</div>
+                <div class="specific-group-vacancy-desc2">Wien, Österreich</div>
+                <div class="specific-group-vacancy-bottoms">
+                    <button class="specific-group-vacancy-badge">heiß</button>
+                    <button class="specific-group-vacancy-send"></button>
+                    <button class="specific-group-vacancy-home"></button>
+                </div>
+
+            </div>
+            <div class="specific-group-vacancy-block-item">
+                <div class="specific-group-vacancy-des3-wrap">
+                    <div class="specific-group-vacancy-desc3">Specific-Group is a leading global provider of digital
+                        platform engineering and development services. We are committed to having a positive impact on
+                        our
+                        customers, our employees, and our communities. We embrace a dynamic and inclusive culture. Here
+                        you
+                        will collaborate with multi-national teams, contribute to a myriad of innovative projects
+                    </div>
+                </div>
+                <div class="specific-group-vacancy-desc1">
+                    Common techstack:
+                    <span class="specific-group-vacancy-text__blue">Java, Spring, Hibernate, Typescript, Angular, Docker, Kubernetes, REST</span>
+                </div>
+            </div>
+            <div class="specific-group-vacancy-block-item">
+                <div class="specific-group-vacancy-desc1">Ansehen und Anwenden</div>
+                <button class="specific-group-vacancy-btn__blue">
+                    Mehr Sehen
+                </button>
+
+            </div>
+        </div>
+        <div class="specific-group-vacancy-block">
+            <div class="specific-group-vacancy-block-item">
+                <h4 class="specific-group-vacancy-title">Java Engineer
+                    (Freelancer/Employee)</h4>
+                <div class="specific-group-vacancy-desc1">Remote</div>
+                <div class="specific-group-vacancy-desc2">Wien, Österreich</div>
+                <div class="specific-group-vacancy-bottoms">
+                    <button class="specific-group-vacancy-badge">heiß</button>
+                    <button class="specific-group-vacancy-send"></button>
+                    <button class="specific-group-vacancy-home"></button>
+                </div>
+
+            </div>
+            <div class="specific-group-vacancy-block-item">
+                <div class="specific-group-vacancy-des3-wrap">
+                    <div class="specific-group-vacancy-desc3">Specific-Group is a leading global provider of digital
+                        platform engineering and development services. We are committed to having a positive impact on
+                        our
+                        customers, our employees, and our communities. We embrace a dynamic and inclusive culture. Here
+                        you
+                        will collaborate with multi-national teams, contribute to a myriad of innovative projects
+                    </div>
+                </div>
+                <div class="specific-group-vacancy-desc1">
+                    Common techstack:
+                    <span class="specific-group-vacancy-text__blue">Java, Spring, Hibernate, Typescript, Angular, Docker, Kubernetes, REST</span>
+                </div>
+            </div>
+            <div class="specific-group-vacancy-block-item">
+                <div class="specific-group-vacancy-desc1">Ansehen und Anwenden</div>
+                <button class="specific-group-vacancy-btn__blue">
+                    Mehr Sehen
+                </button>
+
+            </div>
+        </div>
+        <div class="specific-group-vacancy-block">
+            <div class="specific-group-vacancy-block-item">
+                <h4 class="specific-group-vacancy-title">Java Engineer
+                    (Freelancer/Employee)</h4>
+                <div class="specific-group-vacancy-desc1">Remote</div>
+                <div class="specific-group-vacancy-desc2">Wien, Österreich</div>
+                <div class="specific-group-vacancy-bottoms">
+                    <button class="specific-group-vacancy-badge">heiß</button>
+                    <button class="specific-group-vacancy-send"></button>
+                    <button class="specific-group-vacancy-home"></button>
+                </div>
+
+            </div>
+            <div class="specific-group-vacancy-block-item">
+                <div class="specific-group-vacancy-des3-wrap">
+                    <div class="specific-group-vacancy-desc3">Specific-Group is a leading global provider of digital
+                        platform engineering and development services. We are committed to having a positive impact on
+                        our
+                        customers, our employees, and our communities. We embrace a dynamic and inclusive culture. Here
+                        you
+                        will collaborate with multi-national teams, contribute to a myriad of innovative projects
+                    </div>
+                </div>
+                <div class="specific-group-vacancy-desc1">
+                    Common techstack:
+                    <span class="specific-group-vacancy-text__blue">Java, Spring, Hibernate, Typescript, Angular, Docker, Kubernetes, REST</span>
+                </div>
+            </div>
+            <div class="specific-group-vacancy-block-item">
+                <div class="specific-group-vacancy-desc1">Ansehen und Anwenden</div>
+                <button class="specific-group-vacancy-btn__blue">
+                    Mehr Sehen
+                </button>
+
+            </div>
+        </div>
+        <div class="specific-group-vacancy-block">
+            <div class="specific-group-vacancy-block-item">
+                <h4 class="specific-group-vacancy-title">Java Engineer
+                    (Freelancer/Employee)</h4>
+                <div class="specific-group-vacancy-desc1">Remote</div>
+                <div class="specific-group-vacancy-desc2">Wien, Österreich</div>
+                <div class="specific-group-vacancy-bottoms">
+                    <button class="specific-group-vacancy-badge">heiß</button>
+                    <button class="specific-group-vacancy-send"></button>
+                    <button class="specific-group-vacancy-home"></button>
+                </div>
+
+            </div>
+            <div class="specific-group-vacancy-block-item">
+                <div class="specific-group-vacancy-des3-wrap">
+                    <div class="specific-group-vacancy-desc3">Specific-Group is a leading global provider of digital
+                        platform engineering and development services. We are committed to having a positive impact on
+                        our
+                        customers, our employees, and our communities. We embrace a dynamic and inclusive culture. Here
+                        you
+                        will collaborate with multi-national teams, contribute to a myriad of innovative projects
+                    </div>
+                </div>
+                <div class="specific-group-vacancy-desc1">
+                    Common techstack:
+                    <span class="specific-group-vacancy-text__blue">Java, Spring, Hibernate, Typescript, Angular, Docker, Kubernetes, REST</span>
+                </div>
+            </div>
+            <div class="specific-group-vacancy-block-item">
+                <div class="specific-group-vacancy-desc1">Ansehen und Anwenden</div>
+                <button class="specific-group-vacancy-btn__blue">
+                    Mehr Sehen
+                </button>
+
+            </div>
+        </div>
+    </div>
+
+</section>
+
+</body>
+</html>
