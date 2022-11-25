@@ -506,8 +506,9 @@
             }
         }
 
-        .specific-group-slider{
+        .specific-group-slider {
             padding-bottom: 40px;
+            margin-bottom: 0!important;
         }
 
         .specific-group-slider-wrapper {
@@ -518,6 +519,8 @@
         .specific-group-slider-item {
             padding-left: 20px;
             padding-right: 20px;
+            display: flex!important;
+            justify-content: center;
 
         }
 
@@ -527,10 +530,56 @@
 
         .career-slider-arrow-wrap {
             display: flex;
-            justify-content: end;
+            justify-content: space-between;
             padding-right: 156px;
             padding-top: 46px;
             padding-bottom: 42px;
+
+        }
+
+        .career-slider-navigation {
+            display: flex;
+            align-items: center;
+        }
+
+        .career-slider-navigation-arrow {
+            display: flex;
+            align-items: center;
+        }
+
+        .career-slider-navigation-dots .slick-dots {
+            position: relative;
+            padding-right: 60px;
+            bottom: auto;
+        }
+        .career-slider-navigation-dots .slick-dots li button{
+            position: relative;
+        }
+        .career-slider-navigation-dots .slick-dots li button:before{
+            width: 40px;
+            height: 4px;
+            background: #787878;
+            margin-top:4px;
+            opacity: 1;
+        }
+        .career-slider-navigation-dots .slick-dots li {
+            width: 40px;
+            margin: 0 4px;
+            background:transparent;
+        }
+
+        .career-slider-navigation-dots .slick-dots li.slick-active button:before{
+            background: #FF7A00;
+            opacity: 1;
+        }
+
+        .career-slider-title {
+            font-weight: 400;
+            font-size: 32px;
+            line-height: 56px;
+            color: #FFFFFF;
+            margin: 0;
+            padding-left: 56px;
         }
 
         .career-slider-arrow {
@@ -541,13 +590,52 @@
             background-image: url("images/slider-arrow.svg");
             background-position: 17px center;;
             background-repeat: no-repeat;
-
+            cursor: pointer;
+            z-index: 1000;
         }
-        .career-slider-arrow.prev{
+
+        .career-slider-arrow.prev {
             margin-right: 24px;
         }
+
         .career-slider-arrow.next {
             transform: rotate(180deg);
+        }
+        .specific-group-slider-dot-mobile .slick-dots{
+            position: relative;
+            bottom:auto;
+        }
+        .specific-group-slider-dot-mobile .slick-dots li{
+            width: 8px;
+            height: 8px;
+            background: #787878;
+            border-radius: 50%;
+            margin: 0 3px;
+        }
+        .specific-group-slider-dot-mobile .slick-dots li.slick-active{
+            background: #FF7A00;
+        }
+        @media screen and (max-width: 1024px){
+            .specific-group-slider {
+                padding-bottom: 24px;
+            }
+            .specific-group-slider-dot-mobile{
+                padding-bottom: 24px;
+            }
+            .career-slider-arrow-wrap{
+                padding-bottom: 32px;
+                padding-top: 0;
+            }
+            .specific-group-slider-wrapper{
+                padding-top: 24px;
+            }
+            .specific-group-slider-item{
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            .career-slider-title{
+                padding-left: 20px;
+            }
         }
     </style>
 </head>
@@ -728,11 +816,11 @@
     </div>
 </section>
 <section>
-<!--    <div class="specific-group-container">-->
-        <div class="specific-group-slider-wrapper">
 
+    <div class="specific-group-slider-wrapper">
+        <div class="specific-group-container">
             <div class="career-slider-arrow-wrap">
-                <h1>dfgdg</h1>
+                <h1 class="career-slider-title">Our Life</h1>
                 <div class="career-slider-navigation">
                     <div class="career-slider-navigation-dots"></div>
                     <div class="career-slider-navigation-arrow"></div>
@@ -758,9 +846,10 @@
                     <img src="images/slider1.png"/>
                 </div>
             </div>
+            <div class="specific-group-slider-dot-mobile"></div>
 
         </div>
-<!--    </div>-->
+    </div>
 </section>
 
 <section class="dream-job-block-full-wrap">
@@ -835,14 +924,30 @@
       centerMode: true,
       arrows: true,
       dots: true,
+      draggable:true,
       appendArrows: $('.career-slider-navigation-arrow'),
       prevArrow: "<div class='career-slider-arrow prev'></div>",
       nextArrow: "<div class='career-slider-arrow next'></div>",
       appendDots: $(".career-slider-navigation-dots"),
-      // centerPadding: "20px",
-      // arrows: false,
-      // fade: true,
-      // asNavFor: '.career-slider-arrow-wrap'
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 1,
+            appendDots: $(".specific-group-slider-dot-mobile"),
+            centerMode: true,
+            arrows: false,
+          }
+        },
+        {breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+            appendDots: $(".specific-group-slider-dot-mobile"),
+            centerMode: false,
+            arrows: false,
+          }
+        }
+      ]
     });
   });
 </script>
