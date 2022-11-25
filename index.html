@@ -300,13 +300,13 @@
         }
 
         .faq-block__answer__mobile {
-            padding:0;
-            margin:auto;
+            padding: 0;
+            margin: auto;
             visibility: hidden;
-            height:0;
-            overflow:hidden;
-            opacity:0;
-            transition:all 0.2s linear;
+            height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 0.2s linear;
         }
 
         @media screen and  (max-width: 1400px) {
@@ -320,48 +320,178 @@
                 padding-left: 50px;
                 padding-right: 50px;
             }
-            .faq-block__answer__mobile.active{
-                padding-top:10px;
-                padding-bottom:10px;
+
+            .faq-block__answer__mobile.active {
+                padding-top: 10px;
+                padding-bottom: 10px;
                 visibility: visible;
-                height:auto;
+                height: auto;
                 overflow: auto;
-                opacity:1;
+                opacity: 1;
             }
-            .faq-block-item:last-child{
+
+            .faq-block-item:last-child {
                 display: none;
             }
-            .faq-block-list{
+
+            .faq-block-list {
                 width: 100%;
             }
-            .faq-block-list__item{
+
+            .faq-block-list__item {
                 padding-right: 48px;
             }
-            .faq-block-list__item:after{
+
+            .faq-block-list__item:after {
                 position: absolute;
-                content:"";
+                content: "";
                 width: 48px;
                 height: 48px;
-                background-image:url("images/arrow.svg");
-                transform:rotate(180deg);
+                background-image: url("images/arrow.svg");
+                transform: rotate(180deg);
                 background-position: center;
                 background-repeat: no-repeat;
                 right: 0;
-                top:0;
+                top: 0;
                 transition: all 0.6s;
             }
-            .faq-block-list__item.active:after{
-                transform:rotate(0deg);
+
+            .faq-block-list__item.active:after {
+                transform: rotate(0deg);
                 transition: all 0.6s;
             }
         }
-        @media screen and (max-width: 1024px){
-            .faq-block-item{
+
+        @media screen and (max-width: 1024px) {
+            .faq-block-item {
                 padding-left: 20px;
                 padding-right: 20px;
             }
-            .faq-block-list-img{
+
+            .faq-block-list-img {
                 margin: 0 auto;
+            }
+        }
+
+        .dream-job-block {
+            padding-top: 100px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .dream-gob-block-item:first-child {
+            width: 55%;
+            padding-bottom: 86px;
+        }
+
+        .dream-gob-block-item:last-child {
+            width: 45%;
+            background-image: url("images/dream-img2.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: bottom center;
+            padding-bottom: 466px;
+        }
+
+        .dream-gob-block-title {
+            margin: 0;
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 56px;
+            color: #FF7A00;
+            padding-bottom: 40px;
+        }
+
+        .dream-gob-block-desc {
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 40px;
+            color: #555555;
+            padding-bottom: 56px;
+        }
+
+        .specific-group-button {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 23px;
+            color: #265A92;
+            background: rgba(255, 255, 255, 0.3);
+            border: 2px solid #265A92;
+            padding: 16px 60px 16px 24px;
+            position: relative;
+        }
+
+        .specific-group-button:before {
+            position: absolute;
+            content: "";
+            width: 56px;
+            height: 56px;
+            background-image: url("images/btn-arrow.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            top: 0;
+            right: 0;
+        }
+
+        .dream-job-block-full-wrap {
+            position: relative;
+        }
+
+        .dream-job-block-full-wrap:after {
+            position: absolute;
+            content: "";
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background-image: url("images/dream-img.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 330px;
+            width: 100%;
+            z-index: -1;
+        }
+
+        .dream-job-block {
+
+        }
+
+        @media screen and (max-width: 1400px) {
+            .dream-job-block {
+                padding-top: 40px;
+            }
+            .dream-gob-block-item{
+                padding-left: 50px;
+                padding-right: 50px;
+
+            }
+            .dream-gob-block-item:last-child,
+            .dream-gob-block-item:first-child{
+                width: 100%;
+            }
+            .dream-gob-block-title{
+                font-size: 40px;
+                line-height: 56px;
+            }
+            .dream-gob-block-desc{
+                font-size: 32px;
+                line-height: 40px;
+            }
+            .dream-gob-block-item:first-child{
+                padding-bottom: 0;
+            }
+            .dream-gob-block-item:last-child{
+                min-height: 330px;
+                padding-bottom: 0;
+            }
+        }
+        @media screen and (max-width: 1024px) {
+            .dream-gob-block-item:last-child{
+                min-height: 224px;
+            }
+            .dream-gob-block-item{
+                padding-left: 20px;
+                padding-right: 20px;
             }
         }
     </style>
@@ -543,6 +673,28 @@
     </div>
 </section>
 
+<section class="dream-job-block-full-wrap">
+    <div class="specific-group-container">
+        <div class="dream-job-block">
+            <div class="dream-gob-block-item">
+                <h2 class="dream-gob-block-title">SEHEN SIE NICHT DEN TRAUMJOB
+                    HATTEN SIE HOFFEN ZU FINDEN?</h2>
+                <div class="dream-gob-block-desc">Senden Sie uns Ihre Informationen und wir informieren Sie, wenn sich
+                    etwas ergibt.
+                </div>
+                <div>
+                    <button class="specific-group-button">
+                        Erfahren Sie
+                    </button>
+                </div>
+            </div>
+            <div class="dream-gob-block-item">
+                <!--                <img src="images/dream-img2.png" alt=""/>-->
+            </div>
+        </div>
+    </div>
+</section>
+
 <script>
   function showFAQAnswer() {
     let titles = document.querySelectorAll("[data-faq-id]");
@@ -554,21 +706,21 @@
       item.addEventListener("click", function () {
         let faqId = this.dataset.faqId;
 
-        if(curWidth > 1400){
+        if (curWidth > 1400) {
           titles.forEach(item => item.classList.remove("active"))
           this.classList.add("active");
 
           answers.forEach(answer => {
             answer.dataset.faqAnswer === faqId ? answer.classList.add('active') : answer.classList.remove('active');
           })
-        }else{
-          if(this.classList.contains("active")){
+        } else {
+          if (this.classList.contains("active")) {
             this.classList.remove("active");
             titles.forEach(item => item.classList.remove("active"))
             answers.forEach(answer => {
               answer.dataset.faqAnswer === faqId && answer.classList.remove('active');
             })
-          }else{
+          } else {
             titles.forEach(item => item.classList.remove("active"))
             this.classList.add("active");
             answers.forEach(answer => {
