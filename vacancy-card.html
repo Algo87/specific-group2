@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap"
+          rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .vacancy-card-block {
+            width: 1400px;
+            margin: 0 auto;
+            font-family: 'Source Sans Pro';
+            font-style: normal;
+            box-sizing: border-box;
+        }
+
+        .vacancy-card-block-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+            border-bottom: 1px solid #909A9E;
+        }
+
+        .vacancy-card-block-header-name {
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 40px;
+            color: #000000;
+            padding-right: 24px;
+            margin: 0;
+        }
+
+        .vacancy-card-block-header-badge {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 32px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            background: #FF7A00;
+            border-radius: 4px;
+            padding: 0px 12px;
+            border: none;
+            margin-right: 12px;
+        }
+
+        .vacancy-card-block-desc1 {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 32px;
+            color: #707070;
+            margin: 0;
+            padding-right: 8px;
+        }
+
+        .vacancy-card-block-desc2 {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 32px;
+            color: #5A5A5A;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        .vacancy-card-block-header-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .vacancy-card-block-link {
+            margin-right: 16px;
+        }
+
+        .vacancy-card-block__outline-blue-btn {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 24px;
+            text-decoration-line: underline;
+            color: #265A92;
+            padding: 6px 16px;
+            border: 2px solid #265A92;
+        }
+
+        .vacancy-card-block__social {
+            width: 40px;
+            height: 40px;
+            margin-left: 24px;
+        }
+
+        .vacancy-card-block__social img {
+            /*max-width: 100%;*/
+            width: 100%;
+        }
+
+        .vacancy-card-block-body {
+            padding-bottom: 88px;
+            display: flex;
+        }
+
+        .vacancy-card-block-body-title:first-child {
+            padding-top: 30px;
+        }
+
+        .vacancy-card-block-body-title {
+            padding-top: 36px;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 24px;
+            text-transform: uppercase;
+            color: #265A92;
+            padding-bottom: 16px;
+        }
+
+        .vacancy-card-block-body-list-item,
+        .vacancy-card-block-body-text {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 32px;
+            color: #000000;
+        }
+
+        .vacancy-card-block-body-list-item {
+            position: relative;
+            padding-left: 24px;
+
+        }
+
+        .vacancy-card-block-body-list-item:after {
+            position: absolute;
+            content: "";
+            width: 4px;
+            height: 4px;
+            top: 16px;
+            left: 8px;
+            background-color: #000000;
+            border-radius: 50%;
+
+        }
+
+        .vacancy-card-block-body-title2 {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 32px;
+            color: #000000;
+            padding-bottom: 16px;
+        }
+
+        .vacancy-card-block-form {
+            width: 335px;
+            padding: 16px;
+            background: #FFFFFF;
+            border: 1px solid #EFEFEF;
+            box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.25);
+            margin-left: 40px;
+            margin-top: 20px;
+            box-sizing: border-box;
+        }
+
+        .vacancy-card-block-form-title {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 24px;
+            text-transform: uppercase;
+            padding-bottom: 28px;
+            color: #0C0C0C;
+        }
+
+        .vacancy-card-block-form-item {
+            padding-bottom: 20px;
+        }
+
+        .vacancy-card-label__file,
+        .vacancy-card-label {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 24px;
+            margin-bottom: 4px;
+            margin-top: 0;
+            color: #555555;
+            display: block;
+        }
+
+        .vacancy-card-input {
+            padding: 16px;
+            border: 1px solid #909A9E;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 24px;
+            color: #555555;
+            opacity: 0.5;
+            display: block;
+            width: calc(100% - 32px);
+        }
+
+        .vacancy-input-checkbox {
+            position: absolute;
+            opacity: 0;
+            height: 0;
+            width: 0;
+        }
+
+        .vacancy-card-label__checkbox {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 24px;
+            position: relative;
+            padding-left: 44px;
+            text-decoration-line: underline;
+            color: #265A92;
+
+        }
+
+        .vacancy-card-label__checkbox:before {
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            background: #FFFFFF;
+            border: 1px solid #909A9E;
+        }
+
+        .vacancy-input-checkbox:checked + .vacancy-card-label__checkbox:after {
+            position: absolute;
+            content: "";
+            box-sizing: border-box;
+            width: 16px;
+            height: 16px;
+            top: 5px;
+            left: 5px;
+            background-color: #265A92;
+        }
+
+        .vacancy-card-blue-btn {
+            background: #265A92;
+            border: 2px solid #265A92;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 24px;
+            box-sizing: border-box;
+            color: #FFFFFF;
+            padding: 16px 24px;
+        }
+
+        .w-100 {
+            width: 100%;
+        }
+
+        .vacancy-card-block-header__mobile {
+            display: none;
+        }
+
+        .vacancy-card-block__form-close {
+            display: none;
+        }
+
+        .vacancy-card-block__share-container {
+            display: none;
+        }
+
+        @media screen and (max-width: 1400px) {
+            .vacancy-card-block {
+                width: 100%;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+
+        @media screen and (max-width: 1200px) {
+            .vacancy-card-block-header {
+                display: none;
+            }
+
+            .vacancy-card-block-header__mobile {
+                display: block;
+            }
+
+            .vacancy-card-block-header__mobile .vacancy-card-blue-btn {
+                padding: 6px 24px;
+                box-sizing: border-box;
+                margin-right: 16px;
+            }
+
+            .vacancy-card-share {
+                background: transparent;
+                border: 2px solid #265A92;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 4px 6px;
+                margin-right: 16px;
+            }
+
+            .vacancy-card-block-header__mobile-first {
+                display: flex;
+                flex-wrap: wrap;
+                padding-bottom: 8px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+            }
+
+            .vacancy-card-block-header-name {
+                width: 100%;
+            }
+
+            .vacancy-card-block__outline-blue-btn {
+                margin-right: 16px;
+            }
+
+            .vacancy-card-block-header__mobile-second {
+                /*display: flex;*/
+                /*align-items: center;*/
+                /*flex-wrap: wrap;*/
+            }
+
+            .vacancy-card-block__social {
+                display: flex;
+                align-items: center;
+                margin-left: 0;
+            }
+
+            .vacancy-card-block-link {
+                display: block;
+                width: 24px;
+                height: 24px;
+            }
+
+            .vacancy-card-block__social img {
+                width: auto;
+                max-width: available;
+            }
+
+            .vacancy-card-block-header-badge__mobile {
+                padding-top: 24px;
+                padding-bottom: 12px;
+            }
+
+            .vacancy-card-block {
+                position: relative;
+            }
+
+            .vacancy-card-block-form {
+                display: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                margin: 0 20px;
+                width: calc(100% - 40px);
+
+            }
+
+            .vacancy-card-block-form.active {
+                display: block;
+            }
+
+            .vacancy-card-block__form-close {
+                display: block;
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                right: 10px;
+                top: 20px;
+                background-image: url("images-vacancy/close.svg");
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            .vacancy-card-block__share-container {
+                display: none;
+                position: absolute;
+                top: -1px;
+                left: -2px;
+                background: #FFFFFF;
+                border: 1px solid #EFEFEF;
+                box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.25);
+                padding: 16px;
+                width: 220px;
+                box-sizing: border-box;
+            }
+
+            .vacancy-card-block__share-container.active {
+                display: block;
+            }
+
+            .vacancy-card-share {
+                position: relative;
+
+            }
+
+            .vacancy-card-block__share-head {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding-bottom: 16px;
+            }
+
+            .vacancy-card-block__share-title {
+                font-weight: 600;
+                font-size: 17px;
+                line-height: 22px;
+                text-transform: uppercase;
+                color: #0C0C0C;
+                white-space: nowrap;
+
+            }
+
+            .vacancy-card-block__share-close {
+                width: 24px;
+                height: 24px;
+                background-image: url("images-vacancy/close.svg");
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+            .vacancy-card-block__share-body {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .vacancy-card-shar-wrap {
+                position: relative;
+                display: flex;
+            }
+
+        }
+    </style>
+</head>
+<body>
+<div class="vacancy-card-block">
+    <div class="vacancy-card-block-header">
+        <div class="vacancy-card-block-header-item">
+            <p class="vacancy-card-block-header-name">Java Engineer (Freelancer/Employee)</p>
+            <button class="vacancy-card-block-header-badge">heiß</button>
+            <a href="#" class="vacancy-card-block-link">
+                <img src="images-vacancy/send.svg"/>
+            </a>
+            <a href="#" class="vacancy-card-block-link">
+                <img src="images-vacancy/home.svg">
+            </a>
+            <p class="vacancy-card-block-desc1">Remote</p>
+            <p class="vacancy-card-block-desc2">Wien, Österreich</p>
+        </div>
+        <div class="vacancy-card-block-header-item">
+            <a src="#" class="vacancy-card-block__outline-blue-btn">HR Linkedin </a>
+            <a src="#" class="vacancy-card-block__social">
+                <img src="images-vacancy/linkedIn.svg"/>
+            </a>
+            <a src="#" class="vacancy-card-block__social">
+                <img src="images-vacancy/fb.svg"/>
+            </a>
+            <a src="#" class="vacancy-card-block__social">
+                <img src="images-vacancy/Twitter.svg"/>
+            </a>
+        </div>
+
+    </div>
+    <div class="vacancy-card-block-header__mobile">
+        <div class="vacancy-card-block-header__mobile-first">
+            <p class="vacancy-card-block-header-name">Java Engineer (Freelancer/Employee)</p>
+            <div class="vacancy-card-shar-wrap">
+                <button class="vacancy-card-share" id="vacancy-card-share">
+                    <img src="images-vacancy/share.svg"/>
+
+                </button>
+                <div class="vacancy-card-block__share-container" id="share-container">
+                    <div class="vacancy-card-block__share-head">
+                        <div class="vacancy-card-block__share-title">Share Vacancy</div>
+                        <div class="vacancy-card-block__share-close" id="share-close-btn"></div>
+                    </div>
+                    <div class="vacancy-card-block__share-body">
+                        <a src="#" class="vacancy-card-block__social">
+                            <img src="images-vacancy/linkedIn.svg"/>
+                        </a>
+                        <a src="#" class="vacancy-card-block__social">
+                            <img src="images-vacancy/fb.svg"/>
+                        </a>
+                        <a src="#" class="vacancy-card-block__social">
+                            <img src="images-vacancy/Twitter.svg"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <a src="#" class="vacancy-card-block__outline-blue-btn">HR Linkedin </a>
+            <button class="vacancy-card-blue-btn" id="show-vacancy-form">Apply Job</button>
+        </div>
+        <div class="vacancy-card-block-header__mobile-second">
+            <div class="vacancy-card-block-header-badge__mobile">
+                <button class="vacancy-card-block-header-badge">heiß</button>
+            </div>
+            <div class="vacancy-card-block__social">
+                <a href="#" class="vacancy-card-block-link">
+                    <img src="images-vacancy/send.svg"/>
+                </a>
+                <a href="#" class="vacancy-card-block-link">
+                    <img src="images-vacancy/home.svg">
+                </a>
+                <p class="vacancy-card-block-desc1">Remote</p>
+                <p class="vacancy-card-block-desc2">Wien, Österreich</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="vacancy-card-block-body">
+
+        <div class="vacancy-card-block-body-item">
+            <div class="vacancy-card-block-body-title">Job overview</div>
+            <div class="vacancy-card-block-body-text">
+                Specific-Group is a leading global provider of digital platform
+                engineering and development services. We are committed to having a positive impact on our customers,
+                our
+                employees, and our communities. We embrace a dynamic and inclusive culture. Here you will
+                collaborate
+                with multi-national teams, contribute to a myriad of innovative projects that deliver the most
+                creative
+                and cutting-edge solutions, and have an opportunity to continuously learn and grow. No matter where
+                you
+                are located, you will join a dedicated, creative, and diverse community that will help you discover
+                your
+                fullest potential.
+
+                You are curious, persistent, logical, and clever – a true techie at heart. You enjoy living by the
+                code
+                of your craft and developing elegant solutions for complex problems. If this sounds like you, this
+                could
+                be the perfect opportunity to join EPAM as a Java Engineer. Scroll down to learn more about the
+                position’s responsibilities and requirements.
+            </div>
+            <div class="vacancy-card-block-body-title">What will you do?</div>
+            <div class="vacancy-card-block-body-list-item">Full-cycle application development in Agile environment</div>
+            <div class="vacancy-card-block-body-list-item">Communicate with the customer to clarify requirements</div>
+            <div class="vacancy-card-block-body-list-item">Integrate with other clients’ systems and applications</div>
+            <div class="vacancy-card-block-body-title">Requirements</div>
+
+            <div class="vacancy-card-block-body-text">
+
+                is a leading global provider of digital platform engineering and development services. We are
+                committed to having a positive impact on our customers, our employees, and our communities. We
+                embrace a dynamic and inclusive culture. Here you will collaborate with multi-national teams,
+                contribute to a myriad of innovative projects that deliver the most creative and cutting-edge
+                solutions, and have an opportunity to continuously learn and grow. No matter where you are located,
+                you will join a dedicated, creative, and diverse community that will help you discover your fullest
+                potential.
+
+            </div>
+            <div class="vacancy-card-block-body-title">Additional skills</div>
+            <div class="vacancy-card-block-body-title2">Experience with:</div>
+            <div class="vacancy-card-block-body-list">
+                <div class="vacancy-card-block-body-list-item">NoSQL, Message Brokers</div>
+                <div class="vacancy-card-block-body-list-item">Security, concurrencys</div>
+                <div class="vacancy-card-block-body-list-item"> Design patterns/principles, microservices</div>
+                <div class="vacancy-card-block-body-list-item"> Troubleshooting, monitoring</div>
+                <div class="vacancy-card-block-body-list-item"> Continuous Integration/Deliveryiv</div>
+                <div class="vacancy-card-block-body-list-item"> Kubernetes/OpenShift</div>
+                <div class="vacancy-card-block-body-list-item"> Clouds (AWS, GCP, Azure, etc.)</div>
+                <div class="vacancy-card-block-body-list-item"> Agile/Scrum/Kanban</div>
+            </div>
+            <div class="vacancy-card-block-body-title">Additional skills</div>
+            <div class="vacancy-card-block-body-text">
+                is a leading global provider of digital platform engineering and development services. We are
+                committed to having a positive impact on our customers, our employees, and our communities. We
+                embrace a dynamic and inclusive culture. Here you will collaborate with multi-national teams,
+                contribute to a myriad of innovative projects that deliver the most creative and cutting-edge
+                solutions, and have an opportunity to continuously learn and grow. No matter where you are located,
+                you will join a dedicated, creative, and diverse community that will help you discover your fullest
+                potential.
+            </div>
+
+        </div>
+        <div class="vacancy-card-block-body-item">
+            <form class="vacancy-card-block-form" id="vacancy-card-block-form">
+                <div class="vacancy-card-block__form-close" id="vacancy-card-block__form-close"></div>
+                <h2 class="vacancy-card-block-form-title">Apply Job</h2>
+                <div class="vacancy-card-block-form-item">
+                    <label for="vacancy-first-name" class="vacancy-card-label">First Name*</label>
+                    <input type="text"
+                           placeholder="First Name"
+                           id="vacancy-first-name"
+                           class="vacancy-card-input"/>
+                </div>
+                <div class="vacancy-card-block-form-item">
+                    <label for="vacancy-last-name" class="vacancy-card-label">Last Name*</label>
+                    <input type="text"
+                           placeholder="Last Name"
+                           id="vacancy-last-name"
+                           class="vacancy-card-input"/>
+                </div>
+                <div class="vacancy-card-block-form-item">
+
+                    <label for="vacancy-email" class="vacancy-card-label">E-mail*</label>
+                    <input type="text"
+                           id="vacancy-email"
+                           placeholder="E-mail"
+                           class="vacancy-card-input"/>
+                </div>
+                <div class="vacancy-card-block-form-item">
+                    <label for="vacancy-resume" class="vacancy-card-label__file">Add Resume</label>
+                    <input type="file" class="vacancy-input-file" id="vacancy-resume">
+                </div>
+                <div class="vacancy-card-block-form-item">
+                    <input type="checkbox" class="vacancy-input-checkbox" id="vacancy-policy">
+                    <label for="vacancy-policy" class="vacancy-card-label__checkbox">Privacy policy</label>
+                </div>
+                <div>
+                    <button class="vacancy-card-blue-btn w-100">Apply Job</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<script>
+  function showHideVacancyForm() {
+    const btn = document.getElementById("show-vacancy-form");
+    const form = document.getElementById("vacancy-card-block-form");
+    const closeBtn = document.getElementById("vacancy-card-block__form-close");
+
+    btn.addEventListener("click", () => {
+      form.classList.add("active");
+    });
+
+    closeBtn.addEventListener('click', () => {
+      form.classList.remove("active");
+    });
+  }
+
+  showHideVacancyForm();
+
+  function hideShowShareContainer() {
+    const container = document.getElementById("share-container");
+    const shareBtn = document.getElementById("vacancy-card-share");
+    const closeBtn = document.getElementById("share-close-btn");
+
+    shareBtn.addEventListener("click", () => {
+      container.classList.add("active");
+    });
+
+    closeBtn.addEventListener('click', () => {
+      container.classList.remove("active");
+    });
+
+  }
+
+  hideShowShareContainer();
+</script>
+
+</body>
+</html>
