@@ -50,7 +50,7 @@
             color: #FFFFFF;
             background: #FF7A00;
             border-radius: 4px;
-            padding: 0px 12px;
+            padding: 0 12px;
             border: none;
             margin-right: 12px;
         }
@@ -108,11 +108,12 @@
             display: flex;
         }
 
-        .vacancy-card-block-body-title:first-child {
+        .vacancy-card-block-body-item h1:first-child {
             padding-top: 30px;
         }
 
-        .vacancy-card-block-body-title {
+        /*.vacancy-card-block-body-title {*/
+        .vacancy-card-block-body-item h1 {
             padding-top: 36px;
             font-weight: 600;
             font-size: 18px;
@@ -120,23 +121,28 @@
             text-transform: uppercase;
             color: #265A92;
             padding-bottom: 16px;
+            margin: 0;
         }
 
-        .vacancy-card-block-body-list-item,
-        .vacancy-card-block-body-text {
+        .vacancy-card-block-body-item li,
+        .vacancy-card-block-body-item p {
             font-weight: 400;
             font-size: 18px;
             line-height: 32px;
             color: #000000;
+            margin: 0;
         }
-
-        .vacancy-card-block-body-list-item {
+        .vacancy-card-block-body-item ul{
+            margin: 0;
+        }
+        .vacancy-card-block-body-item li {
             position: relative;
             padding-left: 24px;
+            list-style-type:none;
 
         }
 
-        .vacancy-card-block-body-list-item:after {
+        .vacancy-card-block-body-item li:after {
             position: absolute;
             content: "";
             width: 4px;
@@ -148,7 +154,7 @@
 
         }
 
-        .vacancy-card-block-body-title2 {
+        .vacancy-card-block-body-item h2 {
             font-weight: 600;
             font-size: 18px;
             line-height: 32px;
@@ -161,7 +167,7 @@
             padding: 16px;
             background: #FFFFFF;
             border: 1px solid #EFEFEF;
-            box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
             margin-left: 40px;
             margin-top: 20px;
             box-sizing: border-box;
@@ -377,7 +383,7 @@
                 left: -2px;
                 background: #FFFFFF;
                 border: 1px solid #EFEFEF;
-                box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.25);
+                box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
                 padding: 16px;
                 width: 220px;
                 box-sizing: border-box;
@@ -510,8 +516,8 @@
     <div class="vacancy-card-block-body">
 
         <div class="vacancy-card-block-body-item">
-            <div class="vacancy-card-block-body-title">Job overview</div>
-            <div class="vacancy-card-block-body-text">
+            <h1>Job overview</h1>
+            <p>
                 Specific-Group is a leading global provider of digital platform
                 engineering and development services. We are committed to having a positive impact on our customers,
                 our
@@ -531,14 +537,17 @@
                 could
                 be the perfect opportunity to join EPAM as a Java Engineer. Scroll down to learn more about the
                 position’s responsibilities and requirements.
-            </div>
-            <div class="vacancy-card-block-body-title">What will you do?</div>
-            <div class="vacancy-card-block-body-list-item">Full-cycle application development in Agile environment</div>
-            <div class="vacancy-card-block-body-list-item">Communicate with the customer to clarify requirements</div>
-            <div class="vacancy-card-block-body-list-item">Integrate with other clients’ systems and applications</div>
-            <div class="vacancy-card-block-body-title">Requirements</div>
+            </p>
+            <h1>What will you do?</h1>
+            <ul>
+                <li>Full-cycle application development in Agile environment</li>
+                <li>Communicate with the customer to clarify requirements</li>
+                <li>Integrate with other clients’ systems and applications</li>
+            </ul>
 
-            <div class="vacancy-card-block-body-text">
+            <h1>Requirements</h1>
+
+            <p>
 
                 is a leading global provider of digital platform engineering and development services. We are
                 committed to having a positive impact on our customers, our employees, and our communities. We
@@ -548,21 +557,21 @@
                 you will join a dedicated, creative, and diverse community that will help you discover your fullest
                 potential.
 
-            </div>
-            <div class="vacancy-card-block-body-title">Additional skills</div>
-            <div class="vacancy-card-block-body-title2">Experience with:</div>
-            <div class="vacancy-card-block-body-list">
-                <div class="vacancy-card-block-body-list-item">NoSQL, Message Brokers</div>
-                <div class="vacancy-card-block-body-list-item">Security, concurrencys</div>
-                <div class="vacancy-card-block-body-list-item"> Design patterns/principles, microservices</div>
-                <div class="vacancy-card-block-body-list-item"> Troubleshooting, monitoring</div>
-                <div class="vacancy-card-block-body-list-item"> Continuous Integration/Deliveryiv</div>
-                <div class="vacancy-card-block-body-list-item"> Kubernetes/OpenShift</div>
-                <div class="vacancy-card-block-body-list-item"> Clouds (AWS, GCP, Azure, etc.)</div>
-                <div class="vacancy-card-block-body-list-item"> Agile/Scrum/Kanban</div>
-            </div>
-            <div class="vacancy-card-block-body-title">Additional skills</div>
-            <div class="vacancy-card-block-body-text">
+            </p>
+            <h1>Additional skills</h1>
+            <h2>Experience with:</h2>
+            <ul>
+                <li >NoSQL, Message Brokers</li>
+                <li>Security, concurrencys</li>
+                <li> Design patterns/principles, microservices</li>
+                <li> Troubleshooting, monitoring</li>
+                <li> Continuous Integration/Deliveryiv</li>
+                <li> Kubernetes/OpenShift</li>
+                <li> Clouds (AWS, GCP, Azure, etc.)</li>
+                <li> Agile/Scrum/Kanban</li>
+            </ul>
+            <h1>Additional skills</h1>
+            <p>
                 is a leading global provider of digital platform engineering and development services. We are
                 committed to having a positive impact on our customers, our employees, and our communities. We
                 embrace a dynamic and inclusive culture. Here you will collaborate with multi-national teams,
@@ -570,7 +579,7 @@
                 solutions, and have an opportunity to continuously learn and grow. No matter where you are located,
                 you will join a dedicated, creative, and diverse community that will help you discover your fullest
                 potential.
-            </div>
+            </p>
 
         </div>
         <div class="vacancy-card-block-body-item">
