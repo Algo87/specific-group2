@@ -507,7 +507,7 @@
 
         .specific-group-slider {
             padding-bottom: 40px;
-            margin-bottom: 0!important;
+            margin-bottom: 0 !important;
         }
 
         .specific-group-slider-wrapper {
@@ -518,7 +518,7 @@
         .specific-group-slider-item {
             padding-left: 20px;
             padding-right: 20px;
-            display: flex!important;
+            display: flex !important;
             justify-content: center;
 
         }
@@ -551,23 +551,26 @@
             padding-right: 60px;
             bottom: auto;
         }
-        .career-slider-navigation-dots .slick-dots li button{
+
+        .career-slider-navigation-dots .slick-dots li button {
             position: relative;
         }
-        .career-slider-navigation-dots .slick-dots li button:before{
+
+        .career-slider-navigation-dots .slick-dots li button:before {
             width: 40px;
             height: 4px;
             background: #787878;
-            margin-top:4px;
+            margin-top: 4px;
             opacity: 1;
         }
+
         .career-slider-navigation-dots .slick-dots li {
             width: 40px;
             margin: 0 4px;
-            background:transparent;
+            background: transparent;
         }
 
-        .career-slider-navigation-dots .slick-dots li.slick-active button:before{
+        .career-slider-navigation-dots .slick-dots li.slick-active button:before {
             background: #FF7A00;
             opacity: 1;
         }
@@ -600,46 +603,186 @@
         .career-slider-arrow.next {
             transform: rotate(180deg);
         }
-        .specific-group-slider-dot-mobile .slick-dots{
+
+        .specific-group-slider-dot-mobile .slick-dots {
             position: relative;
-            bottom:auto;
+            bottom: auto;
         }
-        .specific-group-slider-dot-mobile .slick-dots li{
+
+        .specific-group-slider-dot-mobile .slick-dots li {
             width: 8px;
             height: 8px;
             background: #787878;
             border-radius: 50%;
             margin: 0 3px;
         }
-        .specific-group-slider-dot-mobile .slick-dots li.slick-active{
+
+        .specific-group-slider-dot-mobile .slick-dots li.slick-active {
             background: #FF7A00;
         }
-        @media screen and (max-width: 1024px){
+
+        .specific-group-main-title {
+            font-weight: 400;
+            font-size: 60px;
+            line-height: 70px;
+            text-align: center;
+            color: #FFFFFF;
+            margin: 0;
+        }
+
+        .specific-group-main-desc {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 30px;
+            text-align: center;
+            color: #EFEFEF;
+            padding-top: 20px;
+            padding-bottom: 60px;
+        }
+
+        .specific-group-main-btn {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 24px;
+            background: #FFFFFF;
+            display: flex;
+            align-items: center;
+            color: #265A92;
+            padding: 16px 24px;
+            position: relative;
+            z-index: 1;
+            border: none;
+        }
+
+        .specific-group-main-btn-wrap {
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+        }
+
+        .specific-group-main-btn-wrap:after {
+            position: absolute;
+            content: "";
+            width: 100px;
+            height: 100px;
+            background-color: #FF7A00;
+            opacity: 0.77;
+            top: -21px;
+            right: -40px;
+            left: auto;
+            border-radius: 50%;
+            box-sizing: border-box;
+            z-index: 0;
+        }
+
+        .specific-group-main-block {
+            text-align: center;
+            max-width: 780px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            position: relative;
+            z-index: 1000;
+            padding: 0 16px;
+        }
+
+        .specific-group-main {
+            height: 100vh;
+            background-image: url("images/dream-img.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .specific-group-main-bg-filter {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .specific-group-main-bg-filter:before {
+            position: absolute;
+            content: "";
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);
+        }
+
+        .specific-group-main-sm {
+            height: 156px;
+        }
+        .specific-group-main-sm-title {
+            height: 200px;
+        }
+
+        @media screen and (max-width: 1024px) {
+            .specific-group-main-title {
+                font-size: 38px;
+                line-height: 42px;
+            }
+
+            .specific-group-main-desc {
+                font-size: 22px;
+                line-height: 28px;
+            }
+
+        }
+
+        @media screen and (max-width: 1024px) {
             .specific-group-slider {
                 padding-bottom: 24px;
             }
-            .specific-group-slider-dot-mobile{
+
+            .specific-group-slider-dot-mobile {
                 padding-bottom: 24px;
             }
-            .career-slider-arrow-wrap{
+
+            .career-slider-arrow-wrap {
                 padding-bottom: 32px;
                 padding-top: 0;
             }
-            .specific-group-slider-wrapper{
+
+            .specific-group-slider-wrapper {
                 padding-top: 24px;
             }
-            .specific-group-slider-item{
+
+            .specific-group-slider-item {
                 padding-left: 10px;
                 padding-right: 10px;
             }
-            .career-slider-title{
+
+            .career-slider-title {
                 padding-left: 20px;
             }
         }
     </style>
 </head>
 <body>
+<!--specific-group-main-sm  --> //класс для блока с меньшей высотой
+<!--specific-group-main-sm-title--> // класс для блока с меньшей высотой и кнопкой
+<section class="specific-group-main
 
+
+">
+    <div class="specific-group-main-bg-filter">
+                <div class="specific-group-main-block">
+                    <p class="specific-group-main-title">Job your passion. Join Our International Team.</p>
+                    <p class="specific-group-main-desc">Ein Senior Umfeld indem du (technisch) wachsen kannst. (in 2 Klicks zu
+                        deinem Jobinserat)</p>
+                    <div class="specific-group-main-btn-wrap">
+                        <button class="specific-group-main-btn">View all vacancies</button>
+                    </div>
+
+                </div>
+    </div>
+
+
+</section>
 
 <section>
     <div class="specific-group-container">
@@ -912,8 +1055,8 @@
 
   showFAQAnswer();
 </script>
-<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="slick/slick.min.js"></script>
 <script>
   $(document).ready(function () {
@@ -923,7 +1066,7 @@
       centerMode: true,
       arrows: true,
       dots: true,
-      draggable:true,
+      draggable: true,
       appendArrows: $('.career-slider-navigation-arrow'),
       prevArrow: "<div class='career-slider-arrow prev'></div>",
       nextArrow: "<div class='career-slider-arrow next'></div>",
@@ -938,7 +1081,8 @@
             arrows: false,
           }
         },
-        {breakpoint: 600,
+        {
+          breakpoint: 600,
           settings: {
             slidesToShow: 1,
             appendDots: $(".specific-group-slider-dot-mobile"),
